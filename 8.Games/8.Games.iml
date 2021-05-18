@@ -23,5 +23,6 @@
         <jarDirectory url="file://$MODULE_DIR$/../lib" recursive="true" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
