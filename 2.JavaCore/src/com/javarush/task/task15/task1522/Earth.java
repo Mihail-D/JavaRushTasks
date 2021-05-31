@@ -1,0 +1,20 @@
+package com.javarush.task.task15.task1522;
+
+public class Earth implements Planet {
+    private static Earth instance = null;
+
+    private Earth() {
+
+    }
+
+    private static String getName() {
+        return "Earth";
+    }
+
+    public static Earth getInstance() {
+        if (instance == null) {
+            instance = new Earth();
+        }
+        return instance;
+    }
+}
