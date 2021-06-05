@@ -4,6 +4,8 @@ package com.javarush.task.task16.task1622;
 Последовательные выполнения нитей Ӏ Java Core: 6 уровень, 13 лекция
 */
 
+import com.javarush.task.task16.task1632.Message;
+
 public class Solution {
     public volatile static int COUNT = 4;
 
@@ -14,7 +16,7 @@ public class Solution {
 
     }
 
-    public static class SleepingThread extends Thread {
+    public static class SleepingThread extends Thread implements Message {
         private static volatile int threadCount = 0;
         private volatile int countdownIndex = COUNT;
 
@@ -38,6 +40,10 @@ public class Solution {
 
         public String toString() {
             return "#" + getName() + ": " + countdownIndex;
+        }
+        @Override
+        public void showWarning() {
+
         }
     }
 }
