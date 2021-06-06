@@ -52,7 +52,20 @@ public class Solution {
 
         @Override
         public void run() {
-            //Add your code here - добавь код тут
+            try {
+                for (String item : OnlineGame.steps) {
+                    Thread.sleep(1000 / rating);
+                    System.out.println(getName() + ":" + item);
+                }
+
+                if (!OnlineGame.isWinnerFound) {
+                    OnlineGame.isWinnerFound = true;
+                    System.out.println(getName() + ":победитель!");
+                } else throw new InterruptedException();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                System.out.println(getName() + ":проиграл");
+            }
         }
     }
 }

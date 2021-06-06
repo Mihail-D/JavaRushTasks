@@ -29,7 +29,10 @@ public class Solution {
         consolReader3.start();
 
         while (count > readStringCount.get()) {
+
         }
+
+
 
         consolReader1.interrupt();
         consolReader2.interrupt();
@@ -45,7 +48,20 @@ public class Solution {
         private List<String> result = new ArrayList<String>();
 
         public void run() {
-            //add your code here - добавьте код тут
+
+            while (!isInterrupted()) {
+                try {
+                    if (reader.ready()) {
+                        String str = reader.readLine();
+                        result.add(str);
+                        readStringCount.set(readStringCount.get() + 1);
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
 
         @Override
