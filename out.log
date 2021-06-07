@@ -6583,3 +6583,34 @@ java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 2021-06-06 17:33:36 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
 2021-06-06 17:38:24 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
 2021-06-06 17:38:24 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2021-06-07 17:14:02 INFO  ProjectStartupHandler.projectClosing(155) - ---------- Project closed ----------
+
+2021-06-07 17:14:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:03 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:04 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
+2021-06-07 17:14:04 INFO  PluginProjectService.dispose(41) - PluginProjectService for disposed.
+2021-06-07 21:17:29 INFO  ProjectStartupHandler.runActivity(74) - ---------- Project opened ----------
+2021-06-07 21:17:29 INFO  ProjectStartupHandler.runActivity(75) - ---------- Version 3.49 ----------
+
+2021-06-07 21:17:29 INFO  ApacheHttpClient.isSessionAppropriateWithSecretKey(602) - Waiting for server response.
+2021-06-07 21:17:29 INFO  ApacheHttpClient.refreshUserInfo(305) - responseCode = 200
+2021-06-07 21:17:29 INFO  ApacheHttpClient.refreshUserInfo(311) - User information received.
+2021-06-07 21:17:30 INFO  ApacheHttpClient.startGA(36) - GAService started.
+2021-06-07 21:17:30 INFO  AbstractRestApiClient.startService(71) - EventsService started.
+2021-06-07 21:20:27 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-06-07 21:20:27 INFO  ApacheHttpClient.getFilteredTasks(336) - responseCode = 200
+2021-06-07 21:20:32 INFO  ApacheHttpClient.getTaskTemplateInfo(353) - responseCode = 200
+2021-06-07 21:20:32 INFO  TaskInfoSelectorMouseListener.createDirectoryRecursive(77) - File created :D:/Projects/Java/JavaRushTasks/2.JavaCore/src/com/javarush/task/task17/task1707
+2021-06-07 21:21:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:22:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:23:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:24:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:25:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:26:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:27:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:28:30 INFO  ApacheHttpClient.sendEvent(535) - responseCode = 200
+2021-06-07 21:28:38 INFO  ApacheHttpClient.getWebResourceAsStream(502) - responseCode = 200
+2021-06-07 21:28:38 INFO  ApacheHttpClient.getTask(488) - responseCode = 200
