@@ -1,4 +1,4 @@
-package com.javarush.task.task18.task1827;
+package com.javarush.task.task18.task1828;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* 
--c productName price quantity
+Прайсы 2
 */
 
 public class Solution {
@@ -32,10 +32,6 @@ public class Solution {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length == 0) {
-            return;
-        }
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String fileName = reader.readLine();
 
@@ -49,15 +45,10 @@ public class Solution {
         }
 
         switch (args[0]) {
-            case "-c":
-                int id = 0;
-                for (Product product : products) {
-                    if (product.id > id) {
-                        id = product.id;
-                    }
-                }
+            case "-u": {
+                int id = Integer.parseInt(args[1]);
                 String name = "";
-                for (int i = 1; i < args.length - 2; i++) {
+                for (int i = 2; i < args.length - 2; i++) {
                     name += args[i] + " ";
                 }
                 if (name.length() > 30) {
@@ -71,8 +62,26 @@ public class Solution {
                 if (quantity.length() > 4) {
                     quantity = quantity.substring(0, 4);
                 }
-                Product product = new Product(++id, name.trim(), price, quantity);
-                products.add(product);
+                Product productToUpdate = null;
+                for (Product product : products) {
+                    if (product.id == id) productToUpdate = product;
+                }
+                if (productToUpdate != null) {
+                    productToUpdate.name = name;
+                    productToUpdate.price = price;
+                    productToUpdate.quantity = quantity;
+                }
+                break;
+            }
+            case "-d": {
+                int id = Integer.parseInt(args[1]);
+                Product productToDelete = null;
+                for (Product product : products) {
+                    if (product.id == id) productToDelete = product;
+                }
+                if (productToDelete != null) products.remove(productToDelete);
+                break;
+            }
         }
 
         try (FileWriter fileWriter = new FileWriter(fileName)) {
