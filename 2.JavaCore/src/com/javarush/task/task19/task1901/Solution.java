@@ -1,39 +1,44 @@
 package com.javarush.task.task19.task1901;
 
-/* 
-TableAdapter
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/*
+Считаем слово
 */
 
 public class Solution {
-    public static void main(String[] args) {
-        //это пример вывода
-        ATable aTable = new ATable() {
-            @Override
-            public String getCurrentUserName() {
-                return "Amigo";
+    private static int counter = 0;
+
+    public static void main(String[] args) throws IOException {
+
+        String fileName;
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            fileName = br.readLine();
+        }
+
+        StringBuilder text = new StringBuilder();
+        try (FileReader reader = new FileReader(fileName)) {
+            char currentChar;
+            while (reader.ready()) {
+                currentChar = (char) reader.read();
+                text.append(currentChar);
+
             }
+        }
 
-            @Override
-            public String getTableName() {
-                return "DashboardTable";
+        String replacedString = text.toString().replaceAll("\\p{P}", " ").replaceAll("\\s", " ");
+
+        for (String x : replacedString.split(" ")) {
+            if (x.equals("world")) {
+                counter++;
             }
-        };
+        }
 
-        BTable table = new TableAdapter(aTable);
-        System.out.println(table.getHeaderText());
-    }
+        System.out.println(counter);
 
-    public static class TableAdapter {
-
-    }
-
-    public interface ATable {
-        String getCurrentUserName();
-
-        String getTableName();
-    }
-
-    public interface BTable {
-        String getHeaderText();
     }
 }
