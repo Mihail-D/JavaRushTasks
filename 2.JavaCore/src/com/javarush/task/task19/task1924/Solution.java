@@ -3,6 +3,7 @@ package com.javarush.task.task19.task1924;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,30 +27,24 @@ public class Solution {
         map.put(9, "девять");
         map.put(10, "десять");
         map.put(11, "одиннадцать");
-        map.put(12, "twelve");
+        map.put(12, "двенадцать");
     }
 
     public static void main(String[] args) throws IOException {
-/*        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = reader.readLine();*/
-        BufferedReader br = new BufferedReader(new FileReader("D:\\Tempo\\test.txt"));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String s = reader.readLine();
+        BufferedReader br = new BufferedReader(new FileReader(s));
 
-        while (br.ready()) {
-            String string = br.readLine();
-            String[] arr = string.split(" ");
+        String line;
 
-            for (String i : arr) {
-                if (!i.contains("[a-zA-Zа-яА-Я]+") && i.length() > 1) {
-                    System.out.print(i + " ");
-                }
-                else if (i.matches("\\d|1[0-2]")) {
-                    System.out.print(map.get(Integer.parseInt(i))  + " ");
-                }
+        while ((line = br.readLine()) != null) {
+            for (Map.Entry<Integer, String> entry : map.entrySet()) {
+                line = line.replaceAll("\\b" + entry.getKey() + "\\b", entry.getValue());
             }
-            System.out.println("");
+            System.out.println(line);
         }
-    br.close();
-    //reader.close();
+
+        br.close();
+        reader.close();
     }
 }
-// line=line.replaceAll("\\b"+entry.getKey()+"\\b",entry.getValue());
